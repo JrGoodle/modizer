@@ -1,5 +1,4 @@
-Modizer
-=======
+# Modizer
 
 iOS modules, chiptunes & vgm player.
 
@@ -7,9 +6,15 @@ iOS modules, chiptunes & vgm player.
 
 Requires: Xcode 12 or higher
 
+### Generate database
+
+```bash
+Resources/DB/update_all.sh
+```
+
 ### Build FFMPEG-iOS
 
-```
+```bash
 # Assuming you are in project repo root dir:
 cd libs/FFmpeg-iOS-build-script-master
 

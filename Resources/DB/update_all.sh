@@ -1,7 +1,11 @@
-#!/bin/bash
+#!/usr/bin/env bash
+
+set -euo pipefail
+cd "$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+
 echo downloading last allmods.zip
 echo ...
-rm allmods.zip
+rm -f allmods.zip
 curl https://ftp.modland.com/allmods.zip --output allmods.zip
 echo unzipping
 echo ...
@@ -27,9 +31,8 @@ cp trunk/Extras/Docs/STIL.txt .
 cd ..
 echo Create DB
 ./create_db.sh
-rm comp*.txt
-rm allmods.txt
-rm allmods.zip
-rm ASMA/asma*.txt
-rm HVSC/hvsc*.txt
-
+rm -f comp*.txt
+rm -f allmods.txt
+rm -f allmods.zip
+rm -f ASMA/asma*.txt
+rm -f HVSC/hvsc*.txt

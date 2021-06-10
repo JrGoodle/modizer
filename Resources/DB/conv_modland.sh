@@ -1,7 +1,10 @@
-#!/bin/bash
+#!/usr/bin/env bash
+
+set -euo pipefail
+cd "$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
 if (( $# < 1))
-then  
+then
   printf "%b" "allmods file missing.\n" >&2
   printf "%b" "usage: conv_modland.sh allmod_text_file\n" >&2
   printf "\n" >&2
@@ -9,8 +12,8 @@ then
 fi
 
 perl -CSAD -pe 's/\t/\//g' allmods.txt > conv1.tmp
-rm conv.tmp
-for line in `cat ext.txt` 
+rm -f conv.tmp
+for line in `cat ext.txt`
 do
   echo $line
   grep -i "$line" conv1.tmp > conv2.tmp
@@ -28,7 +31,7 @@ awk -F '/' '// {if (NF==7) printf("%s\\%s\\%s\\%s\\%s\\%s\\%s\\%s/%s/%s/%s/%s/%s
 awk -F '/' '// {if (NF==8) printf("%s\\%s\\%s\\%s\\%s\\%s\\%s\\%s\\%s/%s/%s/%s/%s/%s/%s\n",$1,$2,$3,$4,$5,$6,$7,$8,$2,$3,$4,$5,$6,$7,$8);}' conv.tmp > comp8.txt
 awk -F '/' '// {if (NF==8) printf("%s\\%s\\%s\\%s\\%s\\%s\\%s\\%s\\%s/%s/%s/%s/%s/%s/%s\n",$1,$2,$3,$4,$5,$6,$7,$8,$9,$2,$3,$4,$5,$6,$7,$8,$9);}' conv.tmp > comp9.txt
 awk -F '/' '// {if ((NF<=1)||(NF>9)) printf("%d\\%s\n",NF,$0);}' conv.tmp > comp_exception.txt
-rm conv.tmp
-rm conv1.tmp
-rm conv2.tmp
-rm awk.cmd
+rm -f conv.tmp
+rm -f conv1.tmp
+rm -f conv2.tmp
+rm -f awk.cmd
