@@ -1828,12 +1828,12 @@
 		5950D83425DF070200B476B2 /* MIMETYPES.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = MIMETYPES.plist; sourceTree = "<group>"; };
 		5950D83825DF1A2500B476B2 /* ModizerWebView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ModizerWebView.h; sourceTree = "<group>"; };
 		5950D83925DF1A2500B476B2 /* ModizerWebView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ModizerWebView.m; sourceTree = "<group>"; };
-		5950DC6425E0F67D00B476B2 /* modizer sim-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "modizer sim-Info.plist"; path = "/Users/yohannmagnien/Documents/dev/modizer/modizer sim-Info.plist"; sourceTree = "<absolute>"; };
+		5950DC6425E0F67D00B476B2 /* modizer sim-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "modizer sim-Info.plist"; sourceTree = "<group>"; };
 		595221241FDD69150079E76D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/MainWindow.strings; sourceTree = "<group>"; };
 		595221251FDD69190079E76D /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/MainWindow.strings; sourceTree = "<group>"; };
 		5958B41C25C601AB00724722 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		5958B42725C601B300724722 /* CoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreServices.framework; path = System/Library/Frameworks/CoreServices.framework; sourceTree = SDKROOT; };
-		595D4D97262187BD000B7187 /* modizer mac-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "modizer mac-Info.plist"; path = "/Users/yohannmagnien/Documents/dev/modizer/modizer mac-Info.plist"; sourceTree = "<absolute>"; };
+		595D4D97262187BD000B7187 /* modizer mac-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "modizer mac-Info.plist"; sourceTree = "<group>"; };
 		5966D0FE25CFEFED00520777 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		5966D10225CFF0D100520777 /* james_bond.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = james_bond.jpg; sourceTree = "<group>"; };
 		5966D10325CFF0D100520777 /* james_bond.mid */ = {isa = PBXFileReference; lastKnownFileType = audio.midi; path = james_bond.mid; sourceTree = "<group>"; };
@@ -4992,7 +4992,6 @@
 				LastUpgradeCheck = 0720;
 				TargetAttributes = {
 					1D6058900D05DD3D006BFB54 = {
-						DevelopmentTeam = ZV46EUY73C;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -6000,7 +5999,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				CURRENT_PROJECT_VERSION = 3.1;
-				DEVELOPMENT_TEAM = ZV46EUY73C;
+				DEVELOPMENT_TEAM = "";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/libs/bundle-apple-framework-ios",
@@ -6019,7 +6018,7 @@
 				INFOPLIST_FILE = "modizer-Info.plist";
 				LIBRARY_SEARCH_PATHS = "$(PROJECT_DIR)/libs/sid/libsidplayfp/sidplayfp/build/Debug-iphoneos";
 				MARKETING_VERSION = 3.1;
-				PRODUCT_BUNDLE_IDENTIFIER = com.yoyofr.modizer;
+				PRODUCT_BUNDLE_IDENTIFIER = com.goodle.modizer;
 				PRODUCT_NAME = modizer;
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -6066,7 +6065,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				CURRENT_PROJECT_VERSION = 3.1;
-				DEVELOPMENT_TEAM = ZV46EUY73C;
+				DEVELOPMENT_TEAM = 2834594Z8R;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/libs/bundle-apple-framework-ios",
@@ -6085,7 +6084,7 @@
 				LIBRARY_SEARCH_PATHS = "$(PROJECT_DIR)/libs/sid/libsidplayfp/sidplayfp/build/Debug-iphoneos";
 				MARKETING_VERSION = 3.1;
 				ONLY_ACTIVE_ARCH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = com.yoyofr.modizer;
+				PRODUCT_BUNDLE_IDENTIFIER = com.goodle.modizer;
 				PRODUCT_NAME = modizer;
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
