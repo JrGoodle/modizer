@@ -4,7 +4,7 @@
 cd "$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
 # Use homebrew GNU version of grep
-export PATH="/usr/local/opt/grep/libexec/gnubin:$PATH"
+# export PATH="/usr/local/opt/grep/libexec/gnubin:$PATH"
 
 if (( $# < 1))
 then
