@@ -24,7 +24,7 @@ echo ASMA
 echo ...
 cd ASMA
 ./get_asma_latest.sh
-./gen_new_asma.sh Asma
+./gen_asma_md5.sh
 cp trunk/Extras/Docs/STIL.txt .
 ./conv_stil.sh
 ./conv_asma.sh Asma.txt

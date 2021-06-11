@@ -4,7 +4,7 @@ set -x
 set -euo pipefail
 cd "$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
-awk -F'=' -f asma_pathmd5.awk $1 > asma_pathmd5.txt
+awk -F'=' -f asma_pathmd5.awk "$1" > asma_pathmd5.txt
 
 awk -F '/' '// {if (NF==2) printf("%s\n",$0);}' asma_pathmd5.txt > asma2.txt
 awk -F '/' '// {if (NF==3) printf("%s\n",$0);}' asma_pathmd5.txt > asma3.txt
