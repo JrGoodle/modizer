@@ -87,7 +87,7 @@ def main() -> None:
         Project('mdxplay', 'mdxmini/src'),
         Project('node-lame-master', 'node-lame'),
         Project('pmdmini/pmdmini', 'pmdmini/src'),
-        Project('sc68', 'sc68-2.2.1'),
+        Project('sc68', 'sc68'),
         Project('sid/libsidplayfp', 'sidplayfp'),
         Project('snsf/snsf9x', 'snsf9x/snsf9x'),
         Project('STSound', 'StSound'),
