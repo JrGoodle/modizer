@@ -67,7 +67,7 @@ def main() -> None:
         Project('AHX', 'hivelytracker/hvl2wav'),
         Project('asap', 'asap'),
         # Project('ffmpeg-kit-audio-4.4.LTS-ios-framework', 'ffmpeg-kit'),
-        Project('freeverb', ['Freeverb/freeverb/FreeverbVST', 'Freeverb/freeverb/Components']),
+        Project('freeverb', ['freeverb/freeverb/FreeverbVST', 'freeverb/freeverb/Components']),
         Project('highlyexperimental/highlyexperimental', 'webpsx'),
         Project('HighlyQuixotic/HighlyQuixotic', 'Highly_Quixotic/Core'),
         Project('highlytheoritical/highlytheoritical', 'Highly_Theoretical/Core'),
