@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 
-import re
-import sys
+import os
+import shutil
 from pathlib import Path
 from typing import List, Union
 
@@ -27,6 +27,32 @@ class Project(object):
             self.upstream_dirs: List[Path] = [external_repo_dir / upstream_dependency_dirs]
         else:
             self.upstream_dirs: List[Path] = [external_repo_dir / d for d in upstream_dependency_dirs]
+
+
+def remove_dir(dir_path: Path, ignore_errors: bool = False) -> None:
+    shutil.rmtree(str(dir_path), ignore_errors=ignore_errors)
+
+
+def listdir(directory: Path) -> List[Path]:
+    files = os.listdir(directory)
+    return [directory / f for f in files]
+
+
+def copy_directory(from_dir: Path, to_path: Path):
+    # TODO: Replace rmdir() with copytree(dirs_exist_ok=True) when support for Python 3.7 is dropped
+    to_path.rmdir()
+    shutil.copytree(from_dir, to_path, symlinks=True)
+
+
+def copy_file(from_path: Path, to_path: Path):
+    shutil.copyfile(from_path, to_path, symlinks=True)
+
+
+def copy(from_path: Path, to_path: Path):
+    if from_path.is_dir():
+        copy_directory(from_path, to_path)
+    else:
+        copy_file(from_path, to_path)
 
 
 def main() -> None:
@@ -62,6 +88,18 @@ def main() -> None:
         Project('uade-2.13', 'uade-2.13'),
         Project('v2mplayer/v2mplayer', 'v2m-player')
     ]
+
+    for project in third_party_projects:
+        remove_dir(project.modizer_dir)
+        project.modizer_dir.touch()
+        for path in project.upstream_dirs:
+            files = listdir(path)
+            for file in files:
+                from_path = file
+                to_path = project.modizer_dir / file.name
+                print(f'Copy file from {from_path} to {to_path}')
+                copy(from_path, to_path)
+
 
 if __name__ == '__main__':
     main()
