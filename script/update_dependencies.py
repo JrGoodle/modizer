@@ -6,7 +6,8 @@ from pathlib import Path
 from typing import List, Union
 
 modizer_repo_dir: Path = Path(__file__).resolve().parent.parent.resolve()
-external_repo_dir: Path = modizer_repo_dir.parent / 'chiptunes' / 'external'
+modizer_libs_dir: Path = modizer_repo_dir / 'libs'
+external_dir: Path = modizer_repo_dir.parent / 'chiptunes' / 'external'
 
 class Project(object):
     """Project class
@@ -22,11 +23,11 @@ class Project(object):
         :param Union[List[str], str] upstream_dependency_dirs: Upstream dependency dirs containing code
         """
 
-        self.modizer_dir: Path = modizer_repo_dir / modizer_dependency_dir
+        self.modizer_dir: Path = modizer_libs_dir / modizer_dependency_dir
         if isinstance(upstream_dependency_dirs, str):
-            self.upstream_dirs: List[Path] = [external_repo_dir / upstream_dependency_dirs]
+            self.upstream_dirs: List[Path] = [external_dir / upstream_dependency_dirs]
         else:
-            self.upstream_dirs: List[Path] = [external_repo_dir / d for d in upstream_dependency_dirs]
+            self.upstream_dirs: List[Path] = [external_dir / d for d in upstream_dependency_dirs]
 
 
 def remove_dir(dir_path: Path, ignore_errors: bool = False) -> None:
@@ -45,7 +46,7 @@ def copy_directory(from_dir: Path, to_path: Path):
 
 
 def copy_file(from_path: Path, to_path: Path):
-    shutil.copyfile(from_path, to_path, symlinks=True)
+    shutil.copyfile(from_path, to_path)
 
 
 def copy(from_path: Path, to_path: Path):
