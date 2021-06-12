@@ -41,7 +41,7 @@ def listdir(directory: Path) -> List[Path]:
 
 def copy_directory(from_dir: Path, to_path: Path):
     # TODO: Replace rmdir() with copytree(dirs_exist_ok=True) when support for Python 3.7 is dropped
-    to_path.rmdir()
+    remove_dir(to_path, ignore_errors=True)
     shutil.copytree(from_dir, to_path, symlinks=True)
 
 
@@ -54,6 +54,11 @@ def copy(from_path: Path, to_path: Path):
         copy_directory(from_path, to_path)
     else:
         copy_file(from_path, to_path)
+
+
+def make_dir(dir_path: Path, exist_ok: bool = False) -> Path:
+    os.makedirs(dir_path, exist_ok=exist_ok)
+    return dir_path
 
 
 def main() -> None:
@@ -91,8 +96,8 @@ def main() -> None:
     ]
 
     for project in third_party_projects:
-        remove_dir(project.modizer_dir)
-        project.modizer_dir.touch()
+        remove_dir(project.modizer_dir, ignore_errors=True)
+        make_dir(project.modizer_dir)
         for path in project.upstream_dirs:
             files = listdir(path)
             for file in files:
