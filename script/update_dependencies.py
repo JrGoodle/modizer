@@ -91,7 +91,7 @@ def main() -> None:
         Project('sid/libsidplayfp', 'sidplayfp'),
         Project('snsf/snsf9x', 'snsf9x/snsf9x'),
         Project('STSound', 'StSound'),
-        Project('uade-2.13', 'uade-2.13'),
+        Project('uade-2.13', 'uade'),
         Project('v2mplayer/v2mplayer', 'v2m-player')
     ]
 
