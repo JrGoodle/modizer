@@ -8,4 +8,4 @@ cd "$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )/.."
 
 "${PWD}/script/bootstrap"
 
-echo "TODO: script/setup"
+Resources/DB/update_all.sh
