@@ -3,6 +3,13 @@
 Resources/DB/ASMA/Asma.txt
 Resources/DB/database.modizerdb
 Resources/DB/databaseMAIN.modizerdb
+Resources/DB/*.tmp
+Resources/DB/allmods.txt
+Resources/DB/allmods.zip
+Resources/DB/comp*.txt
+Resources/DB/HVSC/hvsc*.txt
+Resources/DB/ASMA/asma*.txt
+
 
 # ASMA svn repo
 Resources/DB/ASMA/trunk
